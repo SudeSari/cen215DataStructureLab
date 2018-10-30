@@ -1,0 +1,30 @@
+﻿  Source.c
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(49): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(54): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(59): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(64): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(66): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(71): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(73): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(78): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(97): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(102): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(108): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: see declaration of 'scanf'
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(148): warning C4033: 'addatbeglist' must return a value
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(166): warning C4033: 'addatendlist' must return a value
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(179): warning C4715: 'addatendlist': not all control paths return a value
+c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\xdoublylinkedlistcomplete\doublylinkedlistcomplete\source.c(159): warning C4715: 'addatbeglist': not all control paths return a value
+  DoublyLinkedListComplete.vcxproj -> C:\Users\Abbas\Dropbox\cukurova\dersler\Data Structure\WorkSpace\XDoublyLinkedListComplete\Debug\DoublyLinkedListComplete.exe
