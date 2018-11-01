@@ -1,4 +1,0 @@
-﻿  Source.c
-c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\insertdeletereverse\insertdeletereverse\source.c(58): warning C4013: 'malloc' undefined; assuming extern returning int
-c:\users\abbas\dropbox\cukurova\dersler\data structure\workspace\insertdeletereverse\insertdeletereverse\source.c(58): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-  InsertDeleteReverse.vcxproj -> C:\Users\Abbas\Dropbox\cukurova\dersler\Data Structure\WorkSpace\InsertDeleteReverse\Debug\InsertDeleteReverse.exe
