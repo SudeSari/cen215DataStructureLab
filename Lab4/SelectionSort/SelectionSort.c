@@ -1,6 +1,27 @@
 // C program for implementation of selection sort 
 #include <stdio.h> 
 
+/*swap given two data*/
+void swap(int *xp, int *yp);
+
+/*implementation of selection sort*/
+void selectionSort(int arr[], int n);
+
+/* Function to print an array */
+void printArray(int arr[], int size);
+
+int main()
+{
+	int arr[] = { 64, 25, 12, 22, 11 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	selectionSort(arr, n);
+	printf("Sorted array: \n");
+	printArray(arr, n);
+
+	system("pause");
+	return 0;
+}
+
 void swap(int *xp, int *yp)
 {
 	int temp = *xp;
@@ -26,22 +47,9 @@ void selectionSort(int arr[], int n)
 	}
 }
 
-/* Function to print an array */
 void printArray(int arr[], int size)
 {
 	for (int i = 0; i < size; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
-}
-
-int main()
-{
-	int arr[] = { 64, 25, 12, 22, 11 };
-	int n = sizeof(arr) / sizeof(arr[0]);
-	selectionSort(arr, n);
-	printf("Sorted array: \n");
-	printArray(arr, n);
-
-	system("pause");
-	return 0;
 }
