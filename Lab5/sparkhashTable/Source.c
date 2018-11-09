@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
 
@@ -39,19 +39,13 @@ hash_table_t *create_hash_table(int size)
 
 unsigned int hash(hash_table_t *hashtable, char *str)
 {
-	unsigned int hashval;
+	unsigned int hashval=0;
 
-	/* we start our hash out at 0 */
-	hashval = 0;
-
-	/* for each character, we multiply the old hash by 31 and add the current
-	 * character.  Remember that shifting a number left is equivalent to
-	 * multiplying it by 2 raised to the number of places shifted.  So we
-	 * are in effect multiplying hashval by 32 and then subtracting hashval.
-	 * Why do we do this?  Because shifting and subtraction are much more
-	 * efficient operations than multiplication.
+	/* for each character, we multiply the old hash by 17 and add the current
+	 * character.
 	 */
-	for (; *str != '\0'; str++) hashval = *str + (hashval << 5) - hashval;
+	for (; *str != '\0'; str++) 
+		hashval = *str + hashval*17;
 
 	/* we then return the hash value mod the hashtable size so that it will
 	 * fit into the necessary range
@@ -59,7 +53,7 @@ unsigned int hash(hash_table_t *hashtable, char *str)
 	return hashval % hashtable->size;
 }
 
-list_t *lookup_string(hash_table_t *hashtable, char *str)
+list_t *get_string(hash_table_t *hashtable, char *str)
 {
 	list_t *list;
 	unsigned int hashval = hash(hashtable, str);
@@ -72,31 +66,30 @@ list_t *lookup_string(hash_table_t *hashtable, char *str)
 	for (; list != NULL; list = list->next) {
 		if (strcmp(str, list->string) == 0) return list;
 	}
-	printf("item %s isnt in the list", str);
+	printf("%s isnt in the list", str);
 	return NULL;
 }
 
 int add_string(hash_table_t *hashtable, char *str)
 {
-	list_t *new_list;
-	list_t *current_list;
+	list_t *new_list, *current_list;
 	unsigned int hashval = hash(hashtable, str);
 
 	/* Attempt to allocate memory for list */
 	if ((new_list = malloc(sizeof(list_t))) == NULL) return 1;
 
 	/* Does item already exist? */
-	current_list = lookup_string(hashtable, str);
+	current_list = get_string(hashtable, str);
 	/* item already exists, don't insert it again. */
 	if (current_list != NULL) {
-		printf("item %s already exists, don't insert it again.\n", str);
+		printf("%s already in the list, don't insert it again.\n", str);
 		return 2;
 	}
 	
 	/* Insert into list */
 	new_list->string = _strdup(str);
 	new_list->next = hashtable->table[hashval];
-	printf("Item %s added to list\n", str);
+	printf(", %s added to list\n", str);
 	hashtable->table[hashval] = new_list;
 
 	return 0;
@@ -115,6 +108,7 @@ void free_table(hash_table_t *hashtable)
 	for (i = 0; i < hashtable->size; i++) {
 		list = hashtable->table[i];
 		while (list != NULL) {
+			printf("%s ",list->string);
 			temp = list;
 			list = list->next;
 			free(temp->string);
@@ -129,17 +123,17 @@ void free_table(hash_table_t *hashtable)
 
 int main()
 {
-	hash_table_t *my_hash_table = create_hash_table(4);
+	hash_table_t *my_hash_table = create_hash_table(5);
 
 	add_string(my_hash_table, "elma");
-	add_string(my_hash_table, "armut"); /* item already exist error*/
+	add_string(my_hash_table, "armut"); 
 	add_string(my_hash_table, "üzüm");
 	add_string(my_hash_table, "abbas");
 	add_string(my_hash_table, "elmas");
-	add_string(my_hash_table, "elma");
+	add_string(my_hash_table, "elma");/* item already exist error*/
 
-	printf(lookup_string(my_hash_table, "elmas")->string);
-	printf("\n");
+	printf(get_string(my_hash_table, "elmas")->string);
+
 	free_table(my_hash_table);
 	system("pause");
 	return 0;

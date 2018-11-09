@@ -6,7 +6,7 @@
 #define SIZE 20
 
 struct DataItem {
-	int data;
+	int value;
 	int key;
 };
 
@@ -41,7 +41,7 @@ struct DataItem *search(int key) {
 void insert(int key, int data) {
 
 	struct DataItem *item = (struct DataItem*) malloc(sizeof(struct DataItem));
-	item->data = data;
+	item->value = data;
 	item->key = key;
 
 	//get the hash 
@@ -92,7 +92,7 @@ void display() {
 	for (i = 0; i < SIZE; i++) {
 
 		if (hashArray[i] != NULL)
-			printf(" (%d,%d)", hashArray[i]->key, hashArray[i]->data);
+			printf(" (%d,%d)", hashArray[i]->key, hashArray[i]->value);
 		else
 			printf(" ~~ ");
 	}
@@ -102,7 +102,7 @@ void display() {
 
 int main() {
 	dummyItem = (struct DataItem*) malloc(sizeof(struct DataItem));
-	dummyItem->data = -1;
+	dummyItem->value = -1;
 	dummyItem->key = -1;
 
 	insert(1, 20);
@@ -119,7 +119,7 @@ int main() {
 	item = search(37);
 
 	if (item != NULL) {
-		printf("Element found: %d\n", item->data);
+		printf("Element found: %d\n", item->value);
 	}
 	else {
 		printf("Element not found\n");
@@ -129,7 +129,7 @@ int main() {
 	item = search(37);
 
 	if (item != NULL) {
-		printf("Element found: %d\n", item->data);
+		printf("Element found: %d\n", item->value);
 	}
 	else {
 		printf("Element not found\n");
