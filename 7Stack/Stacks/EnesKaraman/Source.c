@@ -43,17 +43,16 @@ int main()
 {
 	int menu;
 	int data = 1;
-	int a;
 	do
 	{
 		printf("-----------------------------------------------------------------\n1-Add to stack(push)\n2-Remove and show element(pop)\n3-Show element without removing(peek) -1 to exit");
-		scanf("%d", &menu);
+		scanf_s("%d", &menu);
 
 		switch (menu)
 		{
 		case 1:
 			printf("Insert data\n");
-			scanf("%d", &data);
+			scanf_s("%d", &data);
 			push(data);
 			//printf("\npushed data= %d \n",stack[top]);
 			break;

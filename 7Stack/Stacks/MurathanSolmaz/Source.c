@@ -35,7 +35,7 @@ void main()
 		printf("------------------------------------------\n");
 
 		printf("Enter your choice\n");
-		scanf("%d", &choice);
+		scanf_s("%d", &choice);
 		switch (choice)
 		{
 		case 1:
@@ -52,7 +52,7 @@ void main()
 		}
 		fflush(stdin);
 		printf("Do you want to continue(Type 0 or 1)?\n");
-		scanf("%d", &option);
+		scanf_s("%d", &option);
 	}
 }
 /*  Function to add an element to the stack */
@@ -67,7 +67,7 @@ void push()
 	else
 	{
 		printf("Enter the element to be pushed\n");
-		scanf("%d", &num);
+		scanf_s("%d", &num);
 		s.top = s.top + 1;
 		s.stk[s.top] = num;
 	}

@@ -4,14 +4,13 @@
 
 typedef struct list {
 	int data;
-	//list *next;
 	struct list *next;
 }STACK;
 
 
 // GLOBAL VARIABLES
 STACK *sp = NULL;  // stack pointer , shows the place for insertion and deletion
-int counter = 0;	// Stack size
+int counter = 0;	// Counter for inserted stack
 
 
 void push(int data) {			// Insertion function
@@ -41,7 +40,9 @@ int pop() {  // Deletion function
 		temp = sp;
 		data = sp->data;
 		sp = sp->next;		// Updates pointer
-		free(temp);			// Deleted node from memory...
+		free(temp);			// Deletes node from memory...
+		counter--;			// Decreases counter
+		printf("\nData --> %d\n", data);
 		return data;
 	}
 
@@ -55,12 +56,20 @@ void reset() {  // Reset function
 		sp = sp->next;
 		free(temp);
 	}
+	counter = 0;		// Resets counter
 	printf("\nStack is empty now.\n\n");
 }
 
-STACK *top() { // Returns the adress of last element inserted
+int top() { // Returns the last element inserted
 
-	return sp;
+	if (sp == NULL) {
+		printf("\nStack is empty.\n");
+	}
+	else {
+		printf("\nThe Last inserted data -> %d\n", sp->data);
+		return (sp->data);
+	}
+	
 }
 
 int size() {		//Shows the number of elements stored
@@ -68,14 +77,19 @@ int size() {		//Shows the number of elements stored
 	return counter;
 }
 
-void isEmpty() {    // Checks the stack whether it is empty or not . If it is , it returns 1 other wise it returns 0.
+int isEmpty() {    // Checks the stack whether it is empty or not . If it is , it returns 1 other wise it returns 0.
 
 	if (sp == NULL) {
 		printf("\nStack is empty.\n");
+		return 1;
 
 	}
-	else
+	else {
 		printf("\nStack is not empty. %d elements are stored.\n\n", counter);
+		return 0;
+	}
+	
+
 }
 
 
@@ -83,37 +97,33 @@ int main() {
 
 	int choice;
 	int value;
-	int temp; // to keep poped data to display
 
 	while (1) {
 		printf("1-Push\n2-Pop\n3-Reset\n4-Top\n5-Size\n6-isEmpty\n7-Exit\n");
 		scanf("%d", &choice);
 		switch (choice) {
-		case 1:
+			case 1:
 			printf("Enter the value for insertion : ");
 			scanf("%d", &value);
 			push(value);
 			break;
-		case 2:
-			temp = pop();
-			if (temp != -1) {
-				printf("\nData -> %d \n\n", temp);
-			}
+			case 2:
+			pop();
 
 			break;
-		case 3:
+			case 3:
 			reset();
 			break;
-		case 4:
-			printf("\nThe last element is %d \n\n", top());
+			case 4:
+			top();
 			break;
-		case 5:
+			case 5:
 			printf("\nThe number of elements stored -> %d \n\n\n", size());
 			break;
-		case 6:
+			case 6:
 			isEmpty();
 			break;
-		case 7:
+			case 7:
 			exit(0);
 		}
 

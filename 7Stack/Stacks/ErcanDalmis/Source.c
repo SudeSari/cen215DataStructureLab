@@ -95,7 +95,7 @@ void pop() {
 }
 void operation() {
 	int res = 0;//Nihai sonucumuz
-	int temp, temp1 = sp1;//yine islem yapacagımız icin tempi kullandık(amac sp1i kaybetmemek)
+	int temp= 0, temp1 = sp1;//yine islem yapacagımız icin tempi kullandık(amac sp1i kaybetmemek)
 
 	while (temp > 0) {
 		if (sayi[temp] == -3) {//carpma islem onceligini kontrol ettiriyoruz var ise onu yapıyor

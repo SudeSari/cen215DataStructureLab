@@ -29,7 +29,7 @@ int main()
 	printf("2. POP\n");
 	printf("3. EXIT\n");
 
-	scanf("%d", &option);
+	scanf_s("%d", &option);
 
 	while (option != 3)
 	{
@@ -37,7 +37,7 @@ int main()
 		{
 		case 1:
 			printf("\nEnter value: ");
-			scanf("%d", &value);
+			scanf_s("%d", &value);
 			push(&stackNewPtr, value);
 			printValue(stackNewPtr);
 			break;
@@ -56,7 +56,7 @@ int main()
 		}
 
 		printf("\nWhat do you want: ");
-		scanf("%d", &option);
+		scanf_s("%d", &option);
 	}
 }
 

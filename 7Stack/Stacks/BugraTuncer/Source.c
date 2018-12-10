@@ -42,7 +42,8 @@ int pop()
 		temp = head;
 		head = head->next;
 		printf("Popped %d \n", temp->data);
-		free(head);
+		free(temp);
+		//free(head);
 		return 1;
 	}
 }
@@ -87,6 +88,7 @@ int main() {
 	pop();
 	printStack();
 	printf("Top Element : %d\n", topElement());
-	destroyStack();
+	//destroyStack();
 	printStack();
+
 }
