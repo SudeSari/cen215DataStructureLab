@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct binary_tree
-{
+typedef struct binary_tree{
 	int info;
 	char message[100];
 	struct binary_tree *left;
@@ -13,8 +12,7 @@ typedef struct binary_tree
 
 BIN_TREE *root = NULL;
 
-BIN_TREE *CreateNode()
-{
+BIN_TREE *CreateNode(){
 	BIN_TREE *newNode;
 	newNode = (BIN_TREE *)malloc(sizeof(BIN_TREE));
 	if (newNode == NULL) { printf("yer ayrılamadı"); return NULL; }
@@ -27,8 +25,7 @@ BIN_TREE *CreateNode()
 	return newNode;
 } // Create Node
 
-void InsertNode(BIN_TREE *TreeRoot, BIN_TREE *newNode)
-{
+void InsertNode(BIN_TREE *TreeRoot, BIN_TREE *newNode){
 	if (TreeRoot == NULL)
 	{
 		root = newNode;
@@ -58,24 +55,19 @@ void InsertNode(BIN_TREE *TreeRoot, BIN_TREE *newNode)
 				InsertNode(TreeRoot->right, newNode);
 			}
 		} //  insert right side
-
 	} // else
-
 } // InsertNode
 
-void list(BIN_TREE *TR)
-{
+void list(BIN_TREE *TR){
 	if (TR != NULL)
 	{
 		printf("%d  %s\n", TR->info, TR->message);
 		list(TR->left);
 		list(TR->right);
 	}
-
 } // list
 
-BIN_TREE *search(BIN_TREE *TR, int item)
-{
+BIN_TREE *search(BIN_TREE *TR, int item){
 	while ((TR != NULL) && (TR->info != item))
 	{
 		if (item < TR->info)
@@ -87,8 +79,7 @@ BIN_TREE *search(BIN_TREE *TR, int item)
 	return TR;
 } // search
 
-int CountNodes(BIN_TREE *TR, int toplam)
-{
+int CountNodes(BIN_TREE *TR, int toplam){
 	if (TR == NULL) return toplam;
 	toplam++;
 	toplam = CountNodes(TR->left, toplam);
@@ -96,8 +87,7 @@ int CountNodes(BIN_TREE *TR, int toplam)
 	return toplam;
 } // count nodes
 
-BIN_TREE *DeleteNode(BIN_TREE *treeRoot, int item)
-{
+BIN_TREE *DeleteNode(BIN_TREE *treeRoot, int item){
 	BIN_TREE *tmp, *tmp_root, *tmp2, *search_root, *search;
 	if (treeRoot == NULL)
 		return NULL;
@@ -158,8 +148,7 @@ BIN_TREE *DeleteNode(BIN_TREE *treeRoot, int item)
 	return tmp;
 } // delete 
 
-void main()
-{
+void main(){
 	BIN_TREE *node, *tmp;
 	int menu = 0;
 	int search_value, node_count;
