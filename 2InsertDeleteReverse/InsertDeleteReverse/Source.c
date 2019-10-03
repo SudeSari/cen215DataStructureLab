@@ -16,9 +16,13 @@ int array_insert(int *a, int size, int element, int position)
 			" size of the array which is %i\n", position, size);
 		return 0;
 	}
-	int *p = a + position;//the pointer to the location where the new element will get inserted
-	a += size;//a points to one past the last element of original array
-	while (a > p)    *(a) = *(a - 1), a--;
+	int *p = a + position; //the pointer to the location where the new element will get inserted
+	a += size; //a points to one past the last element of original array
+	while (a > p)
+	{
+		*(a) = *(a - 1);
+		a--;
+	}
 	*a = element;
 	return 1;
 }
@@ -31,15 +35,19 @@ int array_delete(int *a, int size, int position)
 			" size of the array which is %i\n", position, size);
 		return 0;
 	}
-	int *last = a + size - 1;// points to the last element
-	a += position;//a now points to the position of the deltetion
-	while (a < last) *(a) = *(a + 1), a++;
+	int *last = a + size - 1; // points to the last element
+	a += position; //a now points to the position of the deletion
+	while (a < last)
+	{
+		*(a) = *(a + 1);
+		a++;
+	}
 	return 1;
 }
 
 void array_reverse(int *a, int size)
 {
-	for (int i = 0,t; i < size/2; i++)
+	for (int i = 0, t; i < size/2; i++)
 	{
 		t = a[i];
 		a[i] = a[size - i - 1];
@@ -57,8 +65,7 @@ int main() {
 
 	int *a = malloc(MAKS * sizeof(int));
 
-	printf("With How many numbers do you wanto start with?\n");
-	//size
+	printf("How many numbers do you wanto start with?\n");
 	int s;
 	scanf("%d", &s);
 	printf("Enter the array:");
