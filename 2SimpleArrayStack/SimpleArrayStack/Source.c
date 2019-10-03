@@ -3,85 +3,69 @@
 int main()
 {
 	int arr[10], top = -1;
-	int t = 10, c;
+	int c;
 
 	do {
-		//cout << "Enter the operation : \n 1.Add Elements \n 2.Remove Elements \n ";
-		//cout << "3.Display Elements \n 4.Exit \n";
-		printf("Operation: \n1.Add Elements \n2.Remove Elements \n3.Display Elements \n4.Exit \n");
-
-		//cin >> c;
+		printf("\nOperation: \n1.Add Elements \n2.Remove Elements \n3.Display Elements \n4.Exit \n");
 		scanf("%d", &c);
 
 		switch (c)
 		{
-		case 1:
-		{
-			if (top >= 10)
+			case 1:
 			{
-				//cout << "Stack Overflow\n";
-				printf("Stack Overflow\n");
-			}
-			else
-			{
-				int z, x;
-				//cout << "Enter number of elements to be pushed\n";
-				printf("Enter number of elements to be pushed\n");
-				//cin >> z;
-				scanf("%d", &z);
-				for (int i = 0; i < z; ++i)
+				if (top >= 10)
 				{
-					//cout << "Enter element\n";
-					printf("Enter element\n");
-					//cin >> x;
-					scanf("%d", &x);
-					top++;
-					arr[top] = x;
+					printf("Stack Overflow\n");
 				}
-			}
-			break;
-		}
-
-
-		case 2: {
-			if (top <= -1) {
-				//cout << "Stack is Empty \n";
-				printf("Stack is Empty \n");
-			}
-			else {
-				//cout << "Popped Element is " << arr[top];
-				printf("Popped Element is ", arr[top]);
-				top--;
-			}
-			break;
-		}
-
-		case 3:
-		{
-			if (top >= 0)
-			{
-				//cout << "Elements are ";
-				printf("Elements are ");
-				for (int i = 0; i <= top;i++)
+				else
 				{
-					//cout << arr[i] << "-";
-					printf("%d", arr[i], " - ");
+					int z, x;
+					printf("Enter number of elements to be pushed\n");
+					scanf("%d", &z);
+					for (int i = 0; i < z; i++)
+					{
+						printf("Enter element\n");
+						scanf("%d", &x);
+						top++;
+						arr[top] = x;
+					}
 				}
-
+				break;
 			}
-			else
+
+			case 2: {
+				if (top <= -1) {
+					printf("Stack is Empty \n");
+				}
+				else {
+					printf("Popped Element is %d", arr[top]);
+					top--;
+				}
+				break;
+			}
+
+			case 3:
 			{
-				//cout << "Stack is Empty \n";
-				printf("Stack is Empty \n");
-			}
-			break;
-		}
+				if (top >= 0)
+				{
+					printf("Elements are ");
+					for (int i = 0; i <= top;i++)
+					{
+						printf("%d", arr[i], " - ");
+					}
 
-		case 4:
-		{
-			//cout << "Thanks For Using \n";
-			printf("Thanks For Using \n");
-		}
+				}
+				else
+				{
+					printf("Stack is Empty \n");
+				}
+				break;
+			}
+
+			case 4:
+			{
+				printf("Thanks For Using \n");
+			}
 
 		}
 
