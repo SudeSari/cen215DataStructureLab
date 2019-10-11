@@ -3,11 +3,11 @@
 
 void insertAtBeginning(int);
 void insertAtEnd(int);
-void insertBetween(int,int,int);
 void display();
 void removeBeginning();
 void removeEnd();
-void removeSpecific(int);
+//void removeSpecific(int);
+//void insertBetween(int, int, int);
 
 struct Node
 {
@@ -18,7 +18,8 @@ struct Node
 int main()
 {
 	int choice,value,choice1,loc1,loc2;
-	while(1){
+	while(1)
+	{
 		printf("\n\n********* MENU ************\n1. Insert\n2. Display\n3. Delete\n4. Exit\nEnter your choice: ");
 		scanf("%d",&choice);
 		switch(choice)
@@ -27,55 +28,45 @@ int main()
 				printf("Enter the value to be insert: ");
 				scanf("%d",&value);
 			
-				printf("Where you want to insert: \n1. At Beginning\n2. At End\n3. Between\nEnter your choice: ");
+				printf("Where do you want to insert: \n1. At Beginning\n2. At End\nEnter your choice: ");
 				scanf("%d",&choice1);
 				switch(choice1)
 				{
 					case 1: 	
 						insertAtBeginning(value);
-					break;
+						break;
 					case 2: 	
 						insertAtEnd(value);
-					break;
-					case 3:      
-						printf("Enter the two values where you wanto insert: ");
-						scanf("%d%d",&loc1,&loc2);
-						insertBetween(value,loc1,loc2);
-					break;
+						break;
 					default: 	
 						printf("\nWrong Input!! Try again!!!\n\n");
-					break;
+						break;
 				}
-			break;
+				break;
 			case 2: 	
 				display();
-			break;
+				break;
 			case 3: 	
-				printf("How do you want to Delete: \n1. From Beginning\n2. From End\n3. Spesific\nEnter your choice: ");
+				printf("How do you want to Delete: \n1. From Beginning\n2. From End\nEnter your choice: ");
 				scanf("%d",&choice1);
 				switch(choice1)
 				{
 					case 1: 	
 						removeBeginning();
-					break;
+						break;
 					case 2: 	
 						removeEnd(value);
-					break;
-					case 3:      
-						printf("Enter the value which you wanto delete: ");
-						scanf("%d",&loc2);
-						removeSpecific(loc2);
-					break;
+						break;
 					default: 	
 						printf("\nWrong Input!! Try again!!!\n\n");
-					break;
+						break;
 				}
-			break;
+				break;
 			case 4: 	
 				return 0;
 			default: 
 				printf("\nWrong input!!! Try again!!\n\n");
-			break;
+				break;
 		}
 	}
 }
@@ -114,27 +105,6 @@ void insertAtEnd(int value)
 	}
 	printf("\nOne node inserted!!!\n");
 }
-void insertBetween(int value, int loc1, int loc2)
-{
-	struct Node *newNode;
-	newNode = (struct Node*)malloc(sizeof(struct Node));
-	newNode->data = value;
-	if(head == NULL)
-	{
-		newNode->next = NULL;
-		head = newNode;
-	}
-	else
-	{
-		struct Node *temp = head;
-		while(temp->data != loc1 && temp->data != loc2)
-			temp = temp->next;
-		newNode->next = temp->next;
-		temp->next = newNode;
-	}
-	printf("\nOne node inserted!!!\n");
-}
-
 void removeBeginning()
 {
 	if(head == NULL)
@@ -179,22 +149,6 @@ void removeEnd()
 		printf("\nOne node deleted!!!\n\n");
 	}
 }
-void removeSpecific(int delValue)
-{
-	struct Node *temp1 = head, *temp2;
-	while(temp1->data != delValue)
-	{
-		if(temp1 -> next == NULL){
-			printf("\nGiven node not found in the list!!!");
-			return 0;
-		}
-		temp2 = temp1;
-		temp1 = temp1 -> next;
-	}
-	temp2 -> next = temp1 -> next;
-	free(temp1);
-	printf("\nOne node deleted!!!\n\n");
-}
 void display()
 {
 	if(head == NULL)
@@ -207,9 +161,54 @@ void display()
 		printf("\n\nList elements are - \n");
 		while(temp->next != NULL)
 		{
-			printf("%d --->",temp->data);
+			printf("%d --> ",temp->data);
 			temp = temp->next;
 		}
-		printf("%d --->NULL",temp->data);
+		printf("%d --> NULL",temp->data);
 	}
 }
+
+//void insertBetween(int value, int loc1, int loc2)
+//{
+//	struct Node *newNode;
+//	newNode = (struct Node*)malloc(sizeof(struct Node));
+//	newNode->data = value;
+//	if (head == NULL)
+//	{
+//		newNode->next = NULL;
+//		head = newNode;
+//	}
+//	else
+//	{
+//		struct Node *temp = head;
+//		while (temp->data != loc1 && temp->data != loc2)
+//		{
+//			if (temp->next != NULL)
+//				temp = temp->next;
+//			else
+//			{
+//				printf("Couldn't found!");
+//				return 0;
+//			}
+//		}
+//		newNode->next = temp->next;
+//		temp->next = newNode;
+//	}
+//	printf("\nOne node inserted!!!\n");
+//}
+//void removeSpecific(int delValue)
+//{
+//	struct Node *temp1 = head, *temp2;
+//	while(temp1->data != delValue)
+//	{
+//		if(temp1 -> next == NULL){
+//			printf("\nGiven node not found in the list!!!");
+//			return 0;
+//		}
+//		temp2 = temp1;
+//		temp1 = temp1 -> next;
+//	}
+//	temp2 -> next = temp1 -> next;
+//	free(temp1);
+//	printf("\nOne node deleted!!!\n\n");
+//}
