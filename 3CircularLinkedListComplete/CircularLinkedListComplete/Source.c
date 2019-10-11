@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//QUEUE
+
 typedef struct Node
 {
-	int info;
+	int data;
 	struct Node *next;
 }node;
 
@@ -52,10 +54,9 @@ int main()
 
 void create()
 {
-	node *newnode;
-	newnode = (node*)malloc(sizeof(node));
+	node *newnode = (node*)malloc(sizeof(node));
 	printf("\nEnter the node value : ");
-	scanf("%d", &newnode->info);
+	scanf("%d", &newnode->data);
 	newnode->next = NULL;
 	if (rear == NULL)
 		front = rear = newnode;
@@ -70,23 +71,22 @@ void create()
 
 void del()
 {
-	temp = front;
 	if (front == NULL)
 		printf("\nUnderflow :");
 	else
 	{
+		temp = front;
 		if (front == rear)
 		{
-			printf("\n%d", front->info);
+			printf("\n%d", front->data);
 			front = rear = NULL;
 		}
 		else
 		{
-			printf("\n%d", front->info);
+			printf("\n%d", front->data);
 			front = front->next;
 			rear->next = front;
 		}
-
 		temp->next = NULL;
 		free(temp);
 	}
@@ -94,14 +94,13 @@ void del()
 
 void display()
 {
-	temp = front;
 	if (front == NULL)
 		printf("\nEmpty");
 	else
 	{
 		printf("\n");
-		for (;temp != rear;temp = temp->next)
-			printf("\n%d address=%u next=%u\t", temp->info, temp, temp->next);
-		printf("\n%d address=%u next=%u\t", temp->info, temp, temp->next);
+		for (temp = front; temp != rear; temp = temp->next)
+			printf("\n%d\t address=%u \t next=%u\t", temp->data, temp, temp->next);
+		printf("\n%d\t address=%u \t next=%u\t", temp->data, temp, temp->next);
 	}
 }
