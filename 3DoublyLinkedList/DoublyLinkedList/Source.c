@@ -113,7 +113,7 @@ int main()
 	/* Start with the empty list */
 	struct Node* head = NULL;
 	do {
-		printf("********* MENU ************\n1.(Push) inserts a new node on the FRONT of the list.\n2.(InserAfter) insert a new node AFTER the given node\n3.(Append) appends a new node at the END\n4.(Print)\n5. Exit\nEnter your choice: ");
+		printf("\n********* MENU ************\n1.(Push) inserts a new node on the FRONT of the list.\n2.(InserAfter) insert a new node AFTER the given node\n3.(Append) appends a new node at the END\n4.(Print)\n5. Exit\nEnter your choice: ");
 		scanf("%d", &choice);
 		switch (choice)
 		{
