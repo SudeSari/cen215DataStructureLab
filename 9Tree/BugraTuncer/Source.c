@@ -2,8 +2,8 @@
 //  main.c
 //  BinarySearchTree
 //
-//  Created by Buðra Tunçer on 18.12.2018.
-//  Copyright © 2018 Buðra Tunçer. All rights reserved.
+//  Created by BuÄŸra TunÃ§er on 18.12.2018.
+//  Copyright 2018 BuÄŸra TunÃ§er. All rights reserved.
 //
 
 #include <stdio.h>
@@ -86,15 +86,15 @@ int main() {
 	while (1)
 	{
 		printf("Enter Choice \n 1-) Add \n 2-) Delete \n 3-) Display \n 4-) Exit \n");
-		scanf("%d", &i);
+		scanf_s("%d", &i);
 		switch (i)
 		{
 		case 1: printf("Enter Value to add\n");
-			scanf("%d", &data);
+			scanf_s("%d", &data);
 			root = insert(root, data);
 			break;
 		case 2: printf("Enter value to delete\n");
-			scanf("%d", &data);
+			scanf_s("%d", &data);
 			root = delete(root, data);
 			break;
 		case 3: inorder(root);
